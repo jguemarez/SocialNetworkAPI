@@ -1,3 +1,4 @@
+//Data array to transform the number returned by the .getMonth method of the native JavaScript Date class-constructor into the first three letters of the corresponding month.
 const months = [
     'Jan',
     'Feb',
@@ -12,7 +13,7 @@ const months = [
     'Nov',
     'Dec'
 ];
-
+//This function will format the string values of the createdAt properties of thoughts and reactions.
 function formatDate(date) {
 
     const monthNum = new Date(date).getMonth();

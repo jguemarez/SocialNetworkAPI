@@ -1,3 +1,4 @@
+//Data to generate random usernames
 const names = [
     'Aaran',
     'Aaren',
@@ -73,7 +74,7 @@ const names = [
     'Nathaniel',
     'Parker',
 ];
-
+//Data to get random reactions to user's thoughts
 const reactions = [
     'Decision Trackers are awesome',
     'Find My Phone is a useful app',
@@ -97,7 +98,7 @@ const reactions = [
     'Like and subscribe to my channel please',
     'Reply: The side effects of in app purchases on digital marketplaces'
 ];
-
+//Data to generate random thoughts (in pseudo-Latin) one word at a time.
 const lorum = [
     'lorem',
     'imsum',
@@ -127,7 +128,7 @@ const lorum = [
     'pretium',
     'quis',
 ];
-
+//Data to add a domain to each randomly generated email address
 const domain = [
     'gmail',
     'hotmail',
@@ -135,18 +136,18 @@ const domain = [
     'yahoo',
     'outlook'
 ];
-
+//Given an array of any length, generate a random valid index.
 const genRandomIndex = (arr) => Math.floor(Math.random() * arr.length);
 
 // Get a random item given an array
 const getRandomArrItem = (arr) => arr[genRandomIndex(arr)];
 
-// Function to generate random names
+// Function to generate random usernames
 const getRandomUserName = () =>
     `${getRandomArrItem(names)}${Math.floor(Math.random() * 10**3 + 1)}`;
-
+//Gets a random domain for each email address that is persisted to the database.
 const getRandomDomain = () => `${domain[genRandomIndex(domain)]}`;
-
+//Generates a random thought with the specified number of words (passed through the 'words' parameter) from the 'lorum' array 
 const getRandomThought = (words) => {
     let thoughtText = `${getRandomArrItem(lorum)}`;
     for (let i = 1; i < words; i++) {
@@ -155,7 +156,7 @@ const getRandomThought = (words) => {
     return thoughtText;
 };
 
-// Function to generate random comments given a number (ex. 10 comments === getRandomComments(10))
+// Function to generate an array of random reactions to a particular thought given a number (which will become the length of the reactions array) and an array from which to pull a valid username.
 const getRandomReactions = (int, arr) => {
     const results = [];
     for (let i = 0; i < int; i++) {
