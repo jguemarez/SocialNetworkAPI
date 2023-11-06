@@ -53,9 +53,9 @@ module.exports = {
             );
             
             if(!user) res.status(404).json({ message: 'No user found with that id.'});
-
+            //This part of the code deletes all thoughts that were authored by the already deleted user.
             await Thought.deleteMany({ username: user.username}).then(result => res.status(200)
-            .json({ message: `The user ${user.username}  and his/her associated ${result.deletedCount} thoughts were deleted.` }));
+            .json({ message: `The user ${user.username} and his/her associated ${result.deletedCount} thoughts were deleted.` }));
         } catch(err) {
             res.status(500).json(err.message);
         };
