@@ -1,0 +1,23 @@
+{
+    "name": "social-network-api",
+    "version": "1.0.0",
+    "description": "An API (back-end only) for a simple social media platform that uses a NoSQL database by means of the ODM package Mongoose.",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node index.js",
+      "start:dev": "nodemon index.js",
+      "seed": "node utils/seed.js"
+    },
+    "author": "Jonathan Maldonado",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.17.1",
+        "mongoose": "^7.0.2",
+        "mongoose-lean-virtuals":"^0.9.1",
+        "mongoose-lean-getters": "^1.1.0"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.7"
+    }
+  }
